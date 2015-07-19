@@ -18,6 +18,9 @@
 
 using namespace std;
 
+/*
+ * checks to see if (x, y) is a good spot to remove a wall
+ */
 bool goodSpace(vector<vector<bool> >& wall, int x, int y, int length, int height)
 {
   if (x == 0 || y == 0 || x == length - 1 || y == height - 1)
@@ -36,6 +39,10 @@ bool goodSpace(vector<vector<bool> >& wall, int x, int y, int length, int height
   return openSpots < 2;
 }
 
+/*
+ * recursive function that does the majority of the work. does all the wall
+ * removing to form the actual maze
+ */
 void checkNext(vector<vector<bool> >& wall, int x, int y, int length,
                int height, int prevDir)
 {
@@ -106,6 +113,7 @@ void checkNext(vector<vector<bool> >& wall, int x, int y, int length,
 /*
  * argv[1] == length
  * argv[2] == width
+ * argv[3] == char to use for walls (optional, default is '#')
  */
 int main(int argc, char** argv)
 {
