@@ -5,8 +5,8 @@
  * Created on July 18, 2015, 11:26 PM
  * 
  * Recursively creates a maze in ASCII form. Starts to overflow the stack around
- * 202500 square units or so. Created somewhat hastily mostly for use with
- * mazesolver.
+ * 490000 square units or so. Created somewhat hastily mostly for use with
+ * mazesolver. Must be at least 3x3.
  */
 
 #include <cstdlib>
@@ -134,11 +134,11 @@ int main(int argc, char** argv)
   ostringstream out;
   out << length << '\n';
   out << height << '\n';
-  out << "1, 1\n";
+  out << "1 1\n";
   int endX = length - 2;
   while (wall[endX][height - 2] == true)
     endX--;
-  out << endX << ", " << height - 2 << endl;
+  out << endX << ' ' << height - 2 << endl;
   for (int x = 0; x < length; ++x)
   {
     for (int y = 0; y < height; ++y)
