@@ -5,7 +5,8 @@
  * Created on July 18, 2015, 11:26 PM
  * 
  * Recursively creates a maze in ASCII form. Starts to overflow the stack around
- * 202500 square units or so.
+ * 202500 square units or so. Created somewhat hastily mostly for use with
+ * mazesolver.
  */
 
 #include <cstdlib>
